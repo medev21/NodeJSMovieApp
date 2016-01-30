@@ -46,5 +46,9 @@ exports.movie_single = function(req, res){
 
 // not found
 exports.notFound = function(req, res){
-  res.send('this is not the page that you are not looking for');
-};
+  var movies = moviesJSON.movies;
+  res.render('notFound',{
+    movies : movies,
+    title: "This is not the page you are looking for"
+  });
+}
